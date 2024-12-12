@@ -1,4 +1,5 @@
 #pragma once
+#include "Version.h"
 
 #include <vector>
 #include <thread>
@@ -9,6 +10,7 @@ class REngineGame {
 public: 
 	REngineGame();
 	bool StartGame(int Value);
+	int getErrorCount() const;
 
 private:
 
@@ -23,8 +25,8 @@ private:
 
 	// Time Variables
 	double EASY_Time = 120;
-	double MEDIUM_Time = 60;
-	double HARD_Time = 30;
+	double MEDIUM_Time = 80;
+	double HARD_Time = 60;
 
 	// Methods
 	void InitializeGrid();

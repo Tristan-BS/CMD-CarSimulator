@@ -32,5 +32,8 @@
     <ClInclude Include="REngineGame.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Version.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

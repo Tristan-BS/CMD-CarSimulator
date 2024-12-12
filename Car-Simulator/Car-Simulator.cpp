@@ -1,6 +1,6 @@
-#include <iostream>
 #include "Car.h"
 
+#include <iostream>
 #include <thread>
 #include <regex>
 
@@ -34,8 +34,11 @@ int main() {
         cout << "8. Repair Car" << endl;
         cout << "x. Show Inventory - Coming Soon" << endl;
         cout << "9. Exit" << endl;
-        cout << "10. Admin Only" << endl;
-        cout << "11. Admin Output" << endl;
+        cout << "10. Version" << endl << endl;
+        cout << "----------          ADMIN          ----------" << endl;
+        cout << "11. Admin Only" << endl;
+        cout << "12. Admin Output" << endl << endl;
+        cout << "---------------------------------------------" << endl;
         cout << "Your Input: ";
 
         cin >> Option;
@@ -123,11 +126,15 @@ int main() {
             exit(0);
         }
         case 10: {
+            cout << "Current Version: " << VERSION_STRING << endl;
+            break;
+        }
+        case 11: {
             CDS.ApplyAdmin();
             break;
         }
 
-        case 11: {
+        case 12: {
             if (CDS.getAdminMode()) {
                 cout << endl << endl;
                 cout << " ----------          ADMIN          ----------" << endl;

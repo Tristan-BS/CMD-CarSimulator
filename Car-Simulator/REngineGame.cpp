@@ -20,6 +20,10 @@ void REngineGame::setDifficulty(int Value) {
     Difficulty = Value;
 }
 
+int REngineGame::getErrorCount() const {
+    return ErrorCount;
+}
+
 void REngineGame::InitializeGrid() {
     GridSize = 10; // Beispielgröße
     Grid.resize(GridSize, std::vector<char>(GridSize, 'O'));
@@ -73,10 +77,8 @@ void REngineGame::ProcessInput() {
         if (Grid[row][col] == ' ') {
             Grid[row][col] = 'O';
         }
-        else if (Grid[row][col] == 'O') {
-            cout << "This cell is already filled. Try again." << endl;
-        }
         else {
+            cout << "This cell is already filled. Try again." << endl;
             Grid[row][col] = 'X';
             ++ErrorCount;
         }
@@ -116,10 +118,13 @@ bool REngineGame::RunGame() {
             GameRunning = false;
             gameCompleted = true;
             cout << "Minigame completed, Well done!" << endl;
+            cout << "Errors: " << ErrorCount << endl;
         }
     }
 
-    timerThread.join();
+    if (timerThread.joinable()) {
+        timerThread.join();
+    }
 
     if (!gameCompleted) {
         cout << "Game over! Errors: " << ErrorCount << endl;
@@ -128,9 +133,12 @@ bool REngineGame::RunGame() {
     return gameCompleted;
 }
 
-
-
 void REngineGame::Timer() {
-    std::this_thread::sleep_for(std::chrono::seconds(static_cast<int>(TimeLimit)));
+    for (int i = 0; i < static_cast<int>(TimeLimit); ++i) {
+        if (!GameRunning) {
+            return;
+        }
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+    }
     GameRunning = false;
 }

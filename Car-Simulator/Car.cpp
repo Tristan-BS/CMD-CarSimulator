@@ -117,6 +117,7 @@ void Car::RepairCar() {
         cout << "2. Body" << endl;
         cout << "3. Fuel" << endl;
         cout << "4. Go Back" << endl;
+        cout << "Your Input: ";
 
         cin >> Answer;
 
@@ -165,6 +166,8 @@ void Car::RepairCar() {
 
 void Car::InspectCar() {
     if (!CanDrive) {
+        cout << endl << endl;
+        cout << " ----------          Inspection          ----------" << endl;
         cout << "I should take a closer look, just to be sure. This could take a while..." << endl;
 
         if (DeadEngine) {
@@ -334,13 +337,19 @@ void Car::RepairEngineGame(int difficulty) {
     REngineGame EG;
     bool success = EG.StartGame(difficulty);
     if (success) {
-        setEngineCondition(getEngineCondition() + 20); // Beispielwert für die Verbesserung des Motorzustands
+        int errorCount = EG.getErrorCount(); // Fehleranzahl abrufen
+        float repairAmount = 20.0f - (errorCount * 1.0f); // 1% weniger pro Fehler
+        if (repairAmount < 0) {
+            repairAmount = 0; // Sicherstellen, dass der Reparaturwert nicht negativ ist
+        }
+        setEngineCondition(getEngineCondition() + repairAmount);
         if (getEngineCondition() > MaxPercentage) {
             setEngineCondition(MaxPercentage);
         }
-        cout << "Engine condition improved!" << endl;
+        cout << "Engine condition improved by " << repairAmount << "%!" << endl;
     }
 }
+
 
 void Car::RepairBodyGame(int Difficulty) {
     setBodyCondition(MaxPercentage);

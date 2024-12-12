@@ -1,4 +1,5 @@
 #pragma once
+#include "Version.h"
 
 #include <iostream>
 #include <thread>
