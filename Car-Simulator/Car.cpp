@@ -28,14 +28,12 @@ void Car::Drive(float Kilometres) {
         }
 
         if (!AdminMode) {
-            // WARNING: Change Value to '500' -> 0 because of debug reasons
-            std::this_thread::sleep_for(std::chrono::milliseconds(0));
+            std::this_thread::sleep_for(std::chrono::milliseconds(500));
         }
 
         float remainingFuel = getFuelCapacity() - OilConsumptionPerHalfKm;
 
         float remainingOil = getOilCapacity() - OilConsumptionPerHalfKm;
-        cout << OilConsumptionPerHalfKm << "\n" << remainingOil << endl;
 
         if (remainingFuel <= 0) {
             cout << "Out of Fuel! You can no longer drive without fuel o.O" << endl;
