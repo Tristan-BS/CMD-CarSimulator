@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Car.h"
 
+#include <thread>
+
 using std::cout;
 using std::cin;
 using std::cerr;
@@ -12,9 +14,13 @@ float Value;
 Car CDS;
 
 int main() {
-    while(true) {
+    // Starten Sie den Hintergrundthread
+    CDS.StartBackgroundThread();
+
+    while (true) {
         cout << endl << endl;
-        cout << " ----------          MENU          ----------" << endl;
+        cout << "----------          MENU          ----------" << endl;
+        cout << "Balance: " << CDS.Balance << endl << endl;
         cout << "1. Drive" << endl;
         cout << "2. Check Fuel Capacity" << endl;
         cout << "3. Check Oil Capacity" << endl;
@@ -22,7 +28,12 @@ int main() {
         cout << "5. Inspect Car" << endl;
         cout << "6. Refill Fuel" << endl;
         cout << "7. Refill Oil" << endl;
-        cout << "8. Exit" << endl;
+        cout << "8. Repair Car" << endl;
+        cout << "x. Show Inventory - Coming Soon" << endl;
+        cout << "9. Exit" << endl;
+        cout << "10. Admin Only" << endl;
+        cout << "11. Admin Output" << endl;
+        cout << "Your Input: ";
 
         cin >> Option;
 
@@ -49,6 +60,7 @@ int main() {
         }
         case 5: {
             CDS.InspectCar();
+            break;
         }
         case 6: {
             int repeated = 0;
@@ -59,7 +71,7 @@ int main() {
                 cout << "How much did I refilled the petrol can again?" << endl;
                 cin >> Value;
 
-                if (Value > CDS.maxPetrolCanCapacity) {
+                if (Value > CDS.maxPetrolCanCapacity && !CDS.getAdminMode()) {
                     cout << "I dont think so... the maximum amount of litres are " << CDS.maxPetrolCanCapacity << " litres, in this petrol can." << endl << endl << endl;
                 }
                 else {
@@ -68,6 +80,55 @@ int main() {
                     break;
                 }
             } while (true);
+            break;
+        }
+        case 7: {
+            int repeated = 0;
+            do {
+                if (repeated == 0) {
+                    cout << "Luckily I've got an Oil can with me." << endl;
+                }
+                cout << "How much did I refilled the Oil can again?" << endl;
+                cin >> Value;
+
+                if (Value > CDS.maxOilCanCapacity && !CDS.getAdminMode()) {
+                    cout << "I dont think so... the maximum amount of litres are " << CDS.maxOilCanCapacity << " litres, in this Oil can." << endl << endl << endl;
+                }
+                else {
+                    cout << "Perfect. Refilling now." << endl;
+                    CDS.RefillOil(Value);
+                    break;
+                }
+            } while (true);
+            break;
+        }
+        case 8: {
+            CDS.RepairCar();
+            break;
+        }
+        case 9: {
+            // Stoppen Sie den Hintergrundthread
+            CDS.StopBackgroundThread();
+            exit(0);
+        }
+        case 10: {
+            CDS.ApplyAdmin();
+            break;
+        }
+
+        case 11: {
+            if (CDS.getAdminMode()) {
+                cout << endl << endl;
+                cout << " ----------          ADMIN          ----------" << endl;
+                cout << "Body Condition: " << CDS.getBodyCondition() << endl;
+                cout << "Engine Condition: " << CDS.getEngineCondition() << endl;
+                cout << "Fuel: " << CDS.getFuelCapacity() << endl;
+                cout << "Oil: " << CDS.getOilCapacity() << endl;
+                cout << "Mileage: " << CDS.getKilometres() << endl;
+            }
+            else {
+                cout << "You're not registered as an Admin. sorry :(" << endl;
+            }
             break;
         }
         }
