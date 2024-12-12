@@ -61,9 +61,14 @@ private:
 	void setBodyCondition(float Value);
 	void setAdminMode(bool Value);
 
-	// Minigames
-	void RepairEngineGame();
-	void RepairBodyGame();
+	// Repair Menus
+	void RepairMenu();
+	void RepairEngineMenu();
+	void RepairBodyMenu();
+	void RepairBothMenu();
+
+	void RepairEngineGame(int Value);
+	void RepairBodyGame(int Value);
 
 	// Variables
 		// Conditions
@@ -75,6 +80,11 @@ private:
 	float Fuel = 65;
 	float Oil = 4.75;
 	float Mileage = 0;
+
+		// Repair Types
+	int FullRepair = 100;
+	int PartialRepair = 50;
+	int QuickRepair = 20;
 
 		// AdminMode / DevMode
 	bool AdminMode = false;

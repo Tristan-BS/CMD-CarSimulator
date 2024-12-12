@@ -21,9 +21,15 @@
     <ClCompile Include="Car.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="REngineGame.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Car.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="REngineGame.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,7 @@
-#include <iostream>
 #include "Car.h"
+#include "REngineGame.h"
 
+#include <iostream>
 #include <thread>
 #include <atomic>
 #include <chrono>
@@ -9,6 +10,8 @@ using std::cout;
 using std::cin;
 using std::cerr;
 using std::endl;
+
+int Answer;
 
 void Car::Drive(float Kilometres) {
     const float fuelConsumptionPerHalfKm = 0.04f;
@@ -25,7 +28,8 @@ void Car::Drive(float Kilometres) {
         }
 
         if (!AdminMode) {
-            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+            // WARNING: Change Value to '500' -> 0 because of debug reasons
+            std::this_thread::sleep_for(std::chrono::milliseconds(0));
         }
 
         float remainingFuel = getFuelCapacity() - OilConsumptionPerHalfKm;
@@ -75,7 +79,7 @@ void Car::RefillFuel(float Value) {
         setFuelCapacity(maxFuelCapacity);
     }
     else {
-        setFuelCapacity(Value);
+        setFuelCapacity(getFuelCapacity() + Value);
     }
     
     if (!AdminMode) {
@@ -88,14 +92,14 @@ void Car::RefillOil(float Value) {
     float OverMax = getOilCapacity() + Value;
 
     if (AdminMode) {
-        setFuelCapacity(50000);
+        setOilCapacity(50000);
     }
     else if (OverMax > maxOilCapacity) {
         cout << "I would overfill my oil tank if I put it all in, so I only fill it to the limit." << endl;
         setOilCapacity(maxOilCapacity);
     }
     else {
-        setOilCapacity(Value);
+        setOilCapacity(getOilCapacity() + Value);
     }
 
     if (!AdminMode) {
@@ -105,9 +109,9 @@ void Car::RefillOil(float Value) {
 }
 
 void Car::RepairCar() {
-    int Answer;
-
     do {
+        cout << endl << endl;
+        cout << " ----------          Repair Menu          ----------" << endl;
         cout << "What do you think is the Problem with the Car?" << endl;
         cout << "1. Engine" << endl;
         cout << "2. Body" << endl;
@@ -120,7 +124,7 @@ void Car::RepairCar() {
         case 1: {
             if (DeadEngine) {
                 cout << "Yup. Thats not looking good.... Engine is at " << getEngineCondition() << "% engine performance." << endl;
-                RepairEngineGame();
+                RepairMenu();
                 DeadEngine = false;
                 CanDrive = true;
             }
@@ -132,7 +136,7 @@ void Car::RepairCar() {
         case 2: {
             if (DeadBody) {
                 cout << "The car... the car is completely dented, scratched and broken - what have I done to it? :=O" << endl;
-                RepairBodyGame();
+                RepairBodyMenu();
                 DeadBody = false;
                 CanDrive = true;
             }
@@ -250,11 +254,95 @@ void Car::setAdminMode(bool Value) {
 
 // Games
 
-void Car::RepairEngineGame() {
-    setEngineCondition(MaxPercentage);
+void Car::RepairMenu() {
+    cout << endl << endl;
+    cout << " ----------          Repair - Menu          ----------" << endl;
+    cout << "1. Repair Engine" << endl;
+    cout << "2. Repair Body" << endl;
+    cout << "3. Repair Both" << endl;
+    cout << "4. Go Back" << endl;
+    cout << "Your Input: ";
+    cin >> Answer;
+
+    switch (Answer) {
+    case 1: {
+        RepairEngineMenu();
+        break;
+    }
+    case 2: {
+        RepairBodyMenu();
+        break;
+    }
+    case 3: {
+        RepairBothMenu();
+        break;
+    }
+    case 4: {
+        cout << "Return to Menu" << endl;
+        return;
+    }
+    default: {
+        cout << "What are you talking about? Choose something..." << endl;
+        break;
+    }
+    }
+
+
 }
 
-void Car::RepairBodyGame() {
+void Car::RepairEngineMenu() {
+    cout << endl << endl;
+    cout << " ----------          Repair Engine - Menu          ----------" << endl;
+    cout << "1. Full Repair" << endl;
+    cout << "2. Partial Repair" << endl;
+    cout << "3. Quick Fix" << endl;
+    cout << "4. Go Back" << endl;
+    cout << "Your Input: ";
+    cin >> Answer;
+
+    switch (Answer) {
+    case 1: {
+        RepairEngineGame(1);
+        break;
+    }
+    case 2: {
+        RepairEngineGame(2);
+        break;
+    }
+    case 3: {
+        RepairEngineGame(3);
+        break;
+    }
+    case 4: {
+        cout << "Return to Menu" << endl;
+        return;
+    }
+    default: {
+        cout << "What are you talking about? Choose something..." << endl;
+        break;
+    }
+    }
+}
+
+void Car::RepairBodyMenu() {
+}
+
+void Car::RepairBothMenu() {
+}
+
+void Car::RepairEngineGame(int difficulty) {
+    REngineGame EG;
+    bool success = EG.StartGame(difficulty);
+    if (success) {
+        setEngineCondition(getEngineCondition() + 20); // Beispielwert für die Verbesserung des Motorzustands
+        if (getEngineCondition() > MaxPercentage) {
+            setEngineCondition(MaxPercentage);
+        }
+        cout << "Engine condition improved!" << endl;
+    }
+}
+
+void Car::RepairBodyGame(int Difficulty) {
     setBodyCondition(MaxPercentage);
 }
 

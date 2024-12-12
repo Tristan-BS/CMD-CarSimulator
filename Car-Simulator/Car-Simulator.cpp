@@ -2,6 +2,7 @@
 #include "Car.h"
 
 #include <thread>
+#include <regex>
 
 using std::cout;
 using std::cin;
@@ -9,7 +10,9 @@ using std::cerr;
 using std::endl;
 
 int Option;
+int Repeated = 0;
 float Value;
+std::string RefillInput;
 
 Car CDS;
 
@@ -63,13 +66,17 @@ int main() {
             break;
         }
         case 6: {
-            int repeated = 0;
             do {
-                if (repeated == 0) {
+                if (Repeated == 0) {
                     cout << "Luckily I've got an petrol can with me." << endl;
                 }
                 cout << "How much did I refilled the petrol can again?" << endl;
-                cin >> Value;
+                cin >> RefillInput;
+
+                if (RefillInput.find(',')) {
+                    std::replace(RefillInput.begin(), RefillInput.end(), ',', '.');
+                }
+                Value = stof(RefillInput);
 
                 if (Value > CDS.maxPetrolCanCapacity && !CDS.getAdminMode()) {
                     cout << "I dont think so... the maximum amount of litres are " << CDS.maxPetrolCanCapacity << " litres, in this petrol can." << endl << endl << endl;
@@ -83,13 +90,18 @@ int main() {
             break;
         }
         case 7: {
-            int repeated = 0;
             do {
-                if (repeated == 0) {
+                if (Repeated == 0) {
                     cout << "Luckily I've got an Oil can with me." << endl;
                 }
                 cout << "How much did I refilled the Oil can again?" << endl;
-                cin >> Value;
+                cin >> RefillInput;
+
+                if (RefillInput.find(',')) {
+                    std::replace(RefillInput.begin(), RefillInput.end(), ',', '.');
+                }
+                Value = stof(RefillInput);
+                
 
                 if (Value > CDS.maxOilCanCapacity && !CDS.getAdminMode()) {
                     cout << "I dont think so... the maximum amount of litres are " << CDS.maxOilCanCapacity << " litres, in this Oil can." << endl << endl << endl;
@@ -107,7 +119,6 @@ int main() {
             break;
         }
         case 9: {
-            // Stoppen Sie den Hintergrundthread
             CDS.StopBackgroundThread();
             exit(0);
         }
