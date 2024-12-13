@@ -21,7 +21,6 @@ void Car::Drive(float Kilometres) {
 
     for (float i = 0; i <= Kilometres; i += 0.5f) {
 
-        // Überprüfen Sie den Zustand des Autos in jeder Iteration
         if (!CanDrive || DeadEngine || DeadBody) {
             cout << "You can't drive. You have to figure out why!" << endl;
             break;

@@ -32,7 +32,7 @@ int main() {
         cout << "6. Refill Fuel" << endl;
         cout << "7. Refill Oil" << endl;
         cout << "8. Repair Car" << endl;
-        cout << "x. Show Inventory - Coming Soon" << endl;
+        cout << "X. Show Inventory - Coming Soon" << endl;
         cout << "9. Exit" << endl;
         cout << "10. Version" << endl << endl;
         cout << "----------          ADMIN          ----------" << endl;
@@ -136,6 +136,7 @@ int main() {
 
         case 12: {
             if (CDS.getAdminMode()) {
+                system("cls");
                 cout << endl << endl;
                 cout << " ----------          ADMIN          ----------" << endl;
                 cout << "Body Condition: " << CDS.getBodyCondition() << endl;
@@ -147,6 +148,10 @@ int main() {
             else {
                 cout << "You're not registered as an Admin. sorry :(" << endl;
             }
+            break;
+        }
+        default: {
+            cout << "Please try again" << endl;
             break;
         }
         }
