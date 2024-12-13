@@ -2,6 +2,7 @@
 - Random events while driving
    - Deer on road, wich direction? L or R -> DONE
    - Random Person appears - Want to stop? -> DONE
+        - Implement Beggar, to choose if you want to donate him moeny or not ( Not implemented yet due to Missing Money Implementation
   
 - Shop
   - Buy better Car Parts
