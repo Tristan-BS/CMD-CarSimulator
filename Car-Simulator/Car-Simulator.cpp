@@ -1,4 +1,5 @@
 #include "Car.h"
+#include "GeneralFunctions.h"
 
 #include <iostream>
 #include <thread>
@@ -12,9 +13,10 @@ using std::endl;
 int Option;
 int Repeated = 0;
 float Value;
-std::string RefillInput;
+std::string StringInput;
 
 Car CDS;
+GeneralFunctions GF;
 
 int main() {
     // Starten Sie den Hintergrundthread
@@ -48,7 +50,9 @@ int main() {
             system("cls");
             cout << "How many kilometres do you want to drive?" << endl;
             cout << "Your Input: ";
-            cin >> Value;
+            cin >> StringInput;
+
+            Value = GF.ConvertCommaToFloat(StringInput);
 
             CDS.Drive(Value);
             break;
@@ -80,12 +84,9 @@ int main() {
                     cout << "Luckily I've got an petrol can with me." << endl;
                 }
                 cout << "How much did I refilled the petrol can again?" << endl;
-                cin >> RefillInput;
+                cin >> StringInput;
 
-                if (RefillInput.find(',')) {
-                    std::replace(RefillInput.begin(), RefillInput.end(), ',', '.');
-                }
-                Value = stof(RefillInput);
+                Value = GF.ConvertCommaToFloat(StringInput);
 
                 if (Value > CDS.maxPetrolCanCapacity && !CDS.getAdminMode()) {
                     cout << "I dont think so... the maximum amount of litres are " << CDS.maxPetrolCanCapacity << " litres, in this petrol can." << endl << endl << endl;
@@ -105,12 +106,8 @@ int main() {
                     cout << "Luckily I've got an Oil can with me." << endl;
                 }
                 cout << "How much did I refilled the Oil can again?" << endl;
-                cin >> RefillInput;
-
-                if (RefillInput.find(',')) {
-                    std::replace(RefillInput.begin(), RefillInput.end(), ',', '.');
-                }
-                Value = stof(RefillInput);
+                cin >> StringInput;
+                Value = GF.ConvertCommaToFloat(StringInput);
                 
 
                 if (Value > CDS.maxOilCanCapacity && !CDS.getAdminMode()) {
@@ -125,6 +122,7 @@ int main() {
             break;
         }
         case 8: {
+            system("cls");
             CDS.RepairCar();
             break;
         }

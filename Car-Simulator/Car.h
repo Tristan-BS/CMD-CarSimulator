@@ -72,6 +72,9 @@ private:
     void RepairEngineGame(int Value);
     void RepairBodyGame(int Value);
 
+    // Progressbar
+    void ShowProgressBar(float i, float Kilometres);
+
     // Variables
     // Conditions
     float EngineCondition = 100;
@@ -90,4 +93,9 @@ private:
 
     // AdminMode / DevMode
     bool AdminMode = false;
+
+    // Progressbar # Counter
+    int PBHashtagCounter = 105;
+    int PBHashtagCounter_NormalScreen = 105;
+    int PBHashtagCounter_LaptopScreen = 97;
 };

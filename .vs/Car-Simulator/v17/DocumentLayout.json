@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\RandomEvent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|solutionrelative:Car-Simulator\\RandomEvent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\Car.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|solutionrelative:Car-Simulator\\Car.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\Car.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|solutionrelative:Car-Simulator\\Car.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\RandomEvent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|solutionrelative:Car-Simulator\\RandomEvent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\Version.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|solutionrelative:Car-Simulator\\Version.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\Car-Simulator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|solutionrelative:Car-Simulator\\Car-Simulator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\Car.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|solutionrelative:Car-Simulator\\Car.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\GeneralFunctions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|solutionrelative:Car-Simulator\\GeneralFunctions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\GeneralFunctions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|solutionrelative:Car-Simulator\\GeneralFunctions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\RandomEvent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F1F20C1C-6378-482B-9D1B-755A44AD3440}|Car-Simulator\\Car-Simulator.vcxproj|solutionrelative:Car-Simulator\\RandomEvent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,30 +42,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "GeneralFunctions.cpp",
+              "DocumentMoniker": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\GeneralFunctions.cpp",
+              "RelativeDocumentMoniker": "Car-Simulator\\GeneralFunctions.cpp",
+              "ToolTip": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\GeneralFunctions.cpp",
+              "RelativeToolTip": "Car-Simulator\\GeneralFunctions.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-13T11:10:03.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GeneralFunctions.h",
+              "DocumentMoniker": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\GeneralFunctions.h",
+              "RelativeDocumentMoniker": "Car-Simulator\\GeneralFunctions.h",
+              "ToolTip": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\GeneralFunctions.h",
+              "RelativeToolTip": "Car-Simulator\\GeneralFunctions.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-13T11:08:34.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Version.h",
+              "DocumentMoniker": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\Version.h",
+              "RelativeDocumentMoniker": "Car-Simulator\\Version.h",
+              "ToolTip": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\Version.h",
+              "RelativeToolTip": "Car-Simulator\\Version.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-13T10:35:31.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "RandomEvent.cpp",
               "DocumentMoniker": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\RandomEvent.cpp",
               "RelativeDocumentMoniker": "Car-Simulator\\RandomEvent.cpp",
               "ToolTip": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\RandomEvent.cpp",
               "RelativeToolTip": "Car-Simulator\\RandomEvent.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFkAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-13T09:35:21.063Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Car-Simulator.cpp",
               "DocumentMoniker": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\Car-Simulator.cpp",
               "RelativeDocumentMoniker": "Car-Simulator\\Car-Simulator.cpp",
               "ToolTip": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\Car-Simulator.cpp",
               "RelativeToolTip": "Car-Simulator\\Car-Simulator.cpp",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAgwGUAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAgwDIAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-11T14:13:37.594Z",
               "EditorCaption": ""
@@ -62,20 +117,33 @@
               "RelativeDocumentMoniker": "Car-Simulator\\Car.cpp",
               "ToolTip": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\Car.cpp",
               "RelativeToolTip": "Car-Simulator\\Car.cpp",
-              "ViewState": "AgIAABcAAAAAAAAAAAAgwDIAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAJABAAAAAAAAAAAgwKEBAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-11T14:50:50.423Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "RandomEvent.h",
+              "DocumentMoniker": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\RandomEvent.h",
+              "RelativeDocumentMoniker": "Car-Simulator\\RandomEvent.h",
+              "ToolTip": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\RandomEvent.h",
+              "RelativeToolTip": "Car-Simulator\\RandomEvent.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-13T10:30:08.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Car.h",
               "DocumentMoniker": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\Car.h",
               "RelativeDocumentMoniker": "Car-Simulator\\Car.h",
               "ToolTip": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\Car.h",
               "RelativeToolTip": "Car-Simulator\\Car.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAgwGQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-11T14:36:23.404Z",
               "EditorCaption": ""

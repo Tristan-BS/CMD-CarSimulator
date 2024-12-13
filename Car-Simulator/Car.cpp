@@ -18,10 +18,12 @@ int Answer;
 Car::Car() : randomEvent(this) {}
 
 void Car::Drive(float Kilometres) {
-    const float fuelConsumptionPerHalfKm = 0.04f;
+    const float fuelConsumptionPerHalfKm = 0.075f;
     const float OilConsumptionPerHalfKm = 0.025f;
     const float EngineDamagePerKM = 0.25f;
     const float BodyDamagePerKM = 0.10f;
+
+    float initialMileage = getKilometres();
 
     for (float i = 0; i <= Kilometres; i += 0.5f) {
         if (!CanDrive || DeadEngine || DeadBody) {
@@ -49,12 +51,15 @@ void Car::Drive(float Kilometres) {
 
         if (i != 0) {
             system("cls");
+
+            ShowProgressBar(i, Kilometres);
+
             cout << "Drove: " << i << " kilometres..." << endl;
         }
 
         setFuelCapacity(remainingFuel);
         setOilCapacity(remainingOil);
-        setKilometres(i);
+        setKilometres(initialMileage + i);
 
         float newEngineCondition = getEngineCondition() - EngineDamagePerKM;
         float newBodyCondition = getBodyCondition() - BodyDamagePerKM;
@@ -131,6 +136,7 @@ void Car::RepairCar() {
 
         cin >> Answer;
 
+        system("cls");
         switch (Answer) {
         case 1: {
             if (DeadEngine) {
@@ -292,10 +298,12 @@ void Car::RepairMenu() {
         break;
     }
     case 4: {
+        system("cls");
         cout << "Return to Menu" << endl;
         return;
     }
     default: {
+        system("cls");
         cout << "What are you talking about? Choose something..." << endl;
         break;
     }
@@ -326,10 +334,12 @@ void Car::RepairEngineMenu() {
         break;
     }
     case 4: {
+        system("cls");
         cout << "Return to Menu" << endl;
         return;
     }
     default: {
+        system("cls");
         cout << "What are you talking about? Choose something..." << endl;
         break;
     }
@@ -402,4 +412,21 @@ void Car::StopBackgroundThread() {
     if (backgroundThread.joinable()) {
         backgroundThread.join();
     }
+}
+
+void Car::ShowProgressBar(float i, float Kilometres) {
+    float progress = (i / Kilometres) * PBHashtagCounter;
+    int progressBars = static_cast<int>(progress);
+
+    cout << "Progress: [";
+    for (int j = 0; j < PBHashtagCounter; ++j) {
+        if (j < progressBars) {
+            cout << "#";
+        }
+        else {
+            cout << " ";
+        }
+    }
+    cout << "] " << static_cast<int>((progress / PBHashtagCounter) * 100) << "%\n";
+
 }

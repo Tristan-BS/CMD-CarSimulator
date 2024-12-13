@@ -2,8 +2,8 @@
 #pragma once
 
 #define VERSION_MAJOR 0
-#define VERSION_MINOR 15
-#define VERSION_PATCH 6
+#define VERSION_MINOR 21
+#define VERSION_PATCH 8
 #define TYPE "Beta"
 
 #define STRINGIFY(x) #x

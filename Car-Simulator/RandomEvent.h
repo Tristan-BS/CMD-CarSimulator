@@ -17,4 +17,5 @@ private:
     Car* car;
 
     void DeerCrossing();
+    void RandomPerson();
 };
