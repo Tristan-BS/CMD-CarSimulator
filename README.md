@@ -1,6 +1,7 @@
 ## TODOLIST
 - Random events while driving
-   - Deer on road, wich direction? L or R
+   - Deer on road, wich direction? L or R -> DONE
+   - Random Person appears - Want to stop? -> DONE
   
 - Shop
   - Buy better Car Parts
