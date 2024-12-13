@@ -1,5 +1,7 @@
+// Car.cpp
 #include "Car.h"
 #include "REngineGame.h"
+#include "RandomEvent.h"
 
 #include <iostream>
 #include <thread>
@@ -13,6 +15,8 @@ using std::endl;
 
 int Answer;
 
+Car::Car() : randomEvent(this) {}
+
 void Car::Drive(float Kilometres) {
     const float fuelConsumptionPerHalfKm = 0.04f;
     const float OilConsumptionPerHalfKm = 0.025f;
@@ -20,7 +24,6 @@ void Car::Drive(float Kilometres) {
     const float BodyDamagePerKM = 0.10f;
 
     for (float i = 0; i <= Kilometres; i += 0.5f) {
-
         if (!CanDrive || DeadEngine || DeadBody) {
             cout << "You can't drive. You have to figure out why!" << endl;
             break;
@@ -31,7 +34,6 @@ void Car::Drive(float Kilometres) {
         }
 
         float remainingFuel = getFuelCapacity() - OilConsumptionPerHalfKm;
-
         float remainingOil = getOilCapacity() - OilConsumptionPerHalfKm;
 
         if (remainingFuel <= 0) {
@@ -46,6 +48,7 @@ void Car::Drive(float Kilometres) {
         }
 
         if (i != 0) {
+            system("cls");
             cout << "Drove: " << i << " kilometres..." << endl;
         }
 
@@ -58,11 +61,21 @@ void Car::Drive(float Kilometres) {
 
         setEngineCondition(newEngineCondition < 0 ? 0 : newEngineCondition);
         setBodyCondition(newBodyCondition < 0 ? 0 : newBodyCondition);
+
+        // Überprüfen Sie, ob ein zufälliges Ereignis auftritt
+        if (randomEvent.CheckForEvent(i)) {
+            randomEvent.ExecuteEvent();
+        }
     }
 
     if (getFuelCapacity() != 0 && CanDrive) {
         cout << "Finished driving. Im going to rest now." << endl;
     }
+}
+
+void Car::ApplyDamage(float bodyDamage, float engineDamage) {
+    setBodyCondition(getBodyCondition() - bodyDamage);
+    setEngineCondition(getEngineCondition() - engineDamage);
 }
 
 void Car::RefillFuel(float Value) {
@@ -78,7 +91,7 @@ void Car::RefillFuel(float Value) {
     else {
         setFuelCapacity(getFuelCapacity() + Value);
     }
-    
+
     if (!AdminMode) {
         std::this_thread::sleep_for(std::chrono::seconds(4));
         cout << "Finished, i refilled the Fuel!" << endl;
@@ -159,8 +172,6 @@ void Car::RepairCar() {
     } while (true);
 }
 
-
-
 void Car::InspectCar() {
     if (!CanDrive) {
         cout << endl << endl;
@@ -170,14 +181,17 @@ void Car::InspectCar() {
         if (DeadEngine) {
             std::this_thread::sleep_for(std::chrono::seconds(2));
             cout << "It seems the Engine is damaged, its smoking a lot..." << endl;
-        } else if (DeadBody) {
+        }
+        else if (DeadBody) {
             std::this_thread::sleep_for(std::chrono::seconds(3));
             cout << "Wow... I must've hit a few things to make the body look like that." << endl;
-        } else if (getFuelCapacity() == 0) {
+        }
+        else if (getFuelCapacity() == 0) {
             std::this_thread::sleep_for(std::chrono::seconds(1));
             cout << "Really? I'm out of Fuel bro...." << endl;
         }
-    } else {
+    }
+    else {
         cout << "Everything seems to be ok :)" << endl;
     }
 }
@@ -209,21 +223,21 @@ float Car::getAdminMode() {
 }
 
 void Car::ApplyAdmin() {
-   std::string pw;  
+    std::string pw;
 
-   cout << "Enter the Admin password" << endl;  
-   cin >> pw;  
+    cout << "Enter the Admin password" << endl;
+    cin >> pw;
 
-   if (pw == "12345") {  
-       if (AdminMode) {  
-           setAdminMode(false);  
-           cout << "Deactivated Adminmode" << endl;
-       }  
-       else {  
-           setAdminMode(true);  
-           cout << "Activated Adminmode" << endl;
-       }  
-   }  
+    if (pw == "12345") {
+        if (AdminMode) {
+            setAdminMode(false);
+            cout << "Deactivated Adminmode" << endl;
+        }
+        else {
+            setAdminMode(true);
+            cout << "Activated Adminmode" << endl;
+        }
+    }
 }
 
 // SETTER
@@ -286,8 +300,6 @@ void Car::RepairMenu() {
         break;
     }
     }
-
-
 }
 
 void Car::RepairEngineMenu() {
@@ -346,7 +358,6 @@ void Car::RepairEngineGame(int difficulty) {
         cout << "Engine condition improved by " << repairAmount << "%!" << endl;
     }
 }
-
 
 void Car::RepairBodyGame(int Difficulty) {
     setBodyCondition(MaxPercentage);

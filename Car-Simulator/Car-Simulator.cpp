@@ -45,6 +45,7 @@ int main() {
 
         switch (Option) {
         case 1: {
+            system("cls");
             cout << "How many kilometres do you want to drive?" << endl;
             cout << "Your Input: ";
             cin >> Value;
@@ -53,23 +54,28 @@ int main() {
             break;
         }
         case 2: {
+            system("cls");
             cout << "Your Fuel Capacity: " << CDS.getFuelCapacity() << " litres." << endl;
             break;
         }
         case 3: {
+            system("cls");
             cout << "Your Oil Capacity: " << CDS.getOilCapacity() << " litres." << endl;
             break;
         }
         case 4: {
+            system("cls");
             cout << "Your Mileage with this car: " << CDS.getKilometres() << " kilometres" << endl;
             break;
         }
         case 5: {
+            system("cls");
             CDS.InspectCar();
             break;
         }
         case 6: {
             do {
+                system("cls");
                 if (Repeated == 0) {
                     cout << "Luckily I've got an petrol can with me." << endl;
                 }
@@ -93,6 +99,7 @@ int main() {
             break;
         }
         case 7: {
+            system("cls");
             do {
                 if (Repeated == 0) {
                     cout << "Luckily I've got an Oil can with me." << endl;

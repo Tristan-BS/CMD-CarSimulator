@@ -130,10 +130,12 @@
   <ItemGroup>
     <ClCompile Include="Car-Simulator.cpp" />
     <ClCompile Include="Car.cpp" />
+    <ClCompile Include="RandomEvent.cpp" />
     <ClCompile Include="REngineGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Car.h" />
+    <ClInclude Include="RandomEvent.h" />
     <ClInclude Include="REngineGame.h" />
     <ClInclude Include="Version.h" />
   </ItemGroup>
