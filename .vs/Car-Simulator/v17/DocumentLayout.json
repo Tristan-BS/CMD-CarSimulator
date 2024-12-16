@@ -54,8 +54,7 @@
               "RelativeToolTip": "Car-Simulator\\GeneralFunctions.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-13T11:10:03.839Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-13T11:10:03.839Z"
             },
             {
               "$type": "Document",
@@ -67,8 +66,7 @@
               "RelativeToolTip": "Car-Simulator\\GeneralFunctions.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T11:08:34.376Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-13T11:08:34.376Z"
             },
             {
               "$type": "Document",
@@ -78,7 +76,7 @@
               "RelativeDocumentMoniker": "Car-Simulator\\Version.h",
               "ToolTip": "C:\\APC\\Eigene Programme\\C\u002B\u002B\\Car-Simulator\\Car-Simulator\\Version.h",
               "RelativeToolTip": "Car-Simulator\\Version.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-13T10:35:31.677Z",
               "EditorCaption": ""
@@ -93,8 +91,7 @@
               "RelativeToolTip": "Car-Simulator\\Car-Simulator.cpp",
               "ViewState": "AgIAAHsAAAAAAAAAAAAAAIkAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-11T14:13:37.594Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T14:13:37.594Z"
             },
             {
               "$type": "Document",
@@ -106,8 +103,7 @@
               "RelativeToolTip": "Car-Simulator\\RandomEvent.cpp",
               "ViewState": "AgIAAEIAAAAAAAAAAAAAAFkAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-13T09:35:21.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-13T09:35:21.063Z"
             },
             {
               "$type": "Document",
@@ -119,8 +115,7 @@
               "RelativeToolTip": "Car-Simulator\\RandomEvent.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-13T10:30:08.837Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-13T10:30:08.837Z"
             },
             {
               "$type": "Document",
@@ -132,8 +127,7 @@
               "RelativeToolTip": "Car-Simulator\\Car.cpp",
               "ViewState": "AgIAAPIBAAAAAAAAAAAIwAwCAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-11T14:50:50.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T14:50:50.423Z"
             },
             {
               "$type": "Document",
@@ -145,8 +139,7 @@
               "RelativeToolTip": "Car-Simulator\\Car.h",
               "ViewState": "AgIAADwAAAAAAAAAAAAIwFIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-11T14:36:23.404Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T14:36:23.404Z"
             }
           ]
         }
