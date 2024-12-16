@@ -6,6 +6,7 @@
 #include <thread>
 #include <atomic>
 #include <chrono>
+#include <vector>
 
 class Car {
 public:
@@ -22,6 +23,8 @@ public:
     float getEngineCondition();
     float getBodyCondition();
     float getAdminMode();
+    std::vector<std::tuple<float,float,float>> getPetrolList();
+    
 
     void ApplyAdmin();
     void ApplyDamage(float bodyDamage, float engineDamage); // Öffentlich machen
@@ -75,6 +78,11 @@ private:
     // Progressbar
     void ShowProgressBar(float i, float Kilometres);
 
+    // Petrol Station
+    float getRandomKilometres(int Distance);
+    float getPSFuelCapacity(int Distance);
+    float getPSPricePerLitre(int Distance);
+
     // Variables
     // Conditions
     float EngineCondition = 100;
@@ -98,4 +106,7 @@ private:
     int PBHashtagCounter = 105;
     int PBHashtagCounter_NormalScreen = 105;
     int PBHashtagCounter_LaptopScreen = 97;
+
+    // PetrolStation List
+    std::vector<std::tuple<float, float, float>> PetrolVariables;
 };

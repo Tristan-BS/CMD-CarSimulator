@@ -1,2 +1,5 @@
-﻿  REngineGame.cpp
+﻿  Car.cpp
+C:\APC\Eigene Programme\C++\Car-Simulator\Car-Simulator\Car.cpp(238,78): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+C:\APC\Eigene Programme\C++\Car-Simulator\Car-Simulator\Car.cpp(239,78): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+C:\APC\Eigene Programme\C++\Car-Simulator\Car-Simulator\Car.cpp(240,76): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
   Car-Simulator.vcxproj -> C:\APC\Eigene Programme\C++\Car-Simulator\x64\Debug\Car-Simulator.exe

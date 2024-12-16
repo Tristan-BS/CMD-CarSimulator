@@ -3,6 +3,7 @@
 #include <thread>
 #include <regex>
 #include <string>
+#include <cmath>
 
 float GeneralFunctions::ConvertCommaToFloat(std::string String) {
     if (String.find(',')) {
@@ -13,4 +14,8 @@ float GeneralFunctions::ConvertCommaToFloat(std::string String) {
         std::cerr << "No Comma found in String" << String << std::endl;
         return 0.0;
     }
+}
+
+float GeneralFunctions::roundToTwoDecimalPlaces(float value) const {
+    return std::round(value * 100.0f) / 100.0f;
 }

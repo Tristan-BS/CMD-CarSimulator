@@ -2,11 +2,13 @@
 #include "Car.h"
 #include "REngineGame.h"
 #include "RandomEvent.h"
+#include "GeneralFunctions.h"
 
 #include <iostream>
 #include <thread>
 #include <atomic>
 #include <chrono>
+#include <random>
 
 using std::cout;
 using std::cin;
@@ -16,6 +18,7 @@ using std::endl;
 int Answer;
 
 Car::Car() : randomEvent(this) {}
+extern GeneralFunctions GF;
 
 void Car::Drive(float Kilometres) {
     const float fuelConsumptionPerHalfKm = 0.075f;
@@ -228,6 +231,20 @@ float Car::getAdminMode() {
     return AdminMode;
 }
 
+std::vector<std::tuple<float,float,float>> Car::getPetrolList() {  
+   std::vector<std::tuple<float, float, float>> List = {};
+
+   for (int i = 0; i < 5; ++i) {  
+       float temp_Kilometres = GF.roundToTwoDecimalPlaces(getRandomKilometres(i+1));
+       float temp_FuelCapacity = GF.roundToTwoDecimalPlaces(getPSFuelCapacity(i+1));
+       float temp_PricePerL = GF.roundToTwoDecimalPlaces(getPSPricePerLitre(i+1));
+       if (temp_Kilometres >= 0 && temp_FuelCapacity >= 0 && temp_PricePerL >= 0) {
+           List.emplace_back(temp_Kilometres, temp_FuelCapacity, temp_PricePerL);
+       }
+   }
+   return List;
+}
+
 void Car::ApplyAdmin() {
     std::string pw;
 
@@ -429,4 +446,139 @@ void Car::ShowProgressBar(float i, float Kilometres) {
     }
     cout << "] " << static_cast<int>((progress / PBHashtagCounter) * 100) << "%\n";
 
+}
+
+float Car::getRandomKilometres(int Distance) {
+    float min = 5;
+    float max = 100;
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    switch (Distance) {
+    case 1: {
+        min = 15;
+        max = 50;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    case 2: {
+        min = 25;
+        max = 75;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    case 3: {
+        min = 25;
+        max = 100;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    case 4: {
+        min = 40;
+        max = 150;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    case 5: {
+        min = 50;
+        max = 200;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    default: {
+        cout << "Error!" << endl;
+        return -1.0;
+    }
+    }
+}
+
+float Car::getPSFuelCapacity(int Distance) {
+    float min = 0.0;
+    float max = 250;
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    switch (Distance) {
+    case 1: {
+        min = 5;
+        max = 50;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    case 2: {
+        min = 15;
+        max = 100;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    case 3: {
+        min = 25;
+        max = 150;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    case 4: {
+        min = 45;
+        max = 200;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    case 5: {
+        min = 50;
+        max = 215;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    default: {
+        cout << "Error!" << endl;
+        return -1.0;
+    }
+    }
+}
+
+float Car::getPSPricePerLitre(int Distance) {
+    float min = 0.0;
+    float max = 100;
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    switch (Distance) {
+    case 1: {
+        min = 1;
+        max = 2;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    case 2: {
+        min = 1;
+        max = 3;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    case 3: {
+        min = 1;
+        max = 4;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    case 4: {
+        min = 1;
+        max = 5;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    case 5: {
+        min = 1;
+        max = 6.5;
+        std::uniform_real_distribution<> dis(min, max);
+        return dis(gen);
+    }
+    default: {
+        cout << "Error!" << endl;
+        return -1.0;
+    }
+    }
 }

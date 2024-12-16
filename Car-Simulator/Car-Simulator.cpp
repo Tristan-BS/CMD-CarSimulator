@@ -4,6 +4,8 @@
 #include <iostream>
 #include <thread>
 #include <regex>
+#include <tuple>
+#include <cmath>
 
 using std::cout;
 using std::cin;
@@ -35,11 +37,12 @@ int main() {
         cout << "7. Refill Oil" << endl;
         cout << "8. Repair Car" << endl;
         cout << "X. Show Inventory - Coming Soon" << endl;
-        cout << "9. Exit" << endl;
-        cout << "10. Version" << endl << endl;
+        cout << "9. Access to the petrol station " << endl;
+        cout << "10. Exit" << endl;
+        cout << "11. Version" << endl << endl;
         cout << "----------          ADMIN          ----------" << endl;
-        cout << "11. Admin Only" << endl;
-        cout << "12. Admin Output" << endl << endl;
+        cout << "12. Admin Only" << endl;
+        cout << "13. Admin Output" << endl << endl;
         cout << "---------------------------------------------" << endl;
         cout << "Your Input: ";
 
@@ -127,19 +130,42 @@ int main() {
             break;
         }
         case 9: {
+            system("cls");
+
+            cout << endl << endl;
+            cout << "----------          PETROL STATION          ----------" << endl;
+
+            auto petrolList = CDS.getPetrolList();
+            for (size_t i = 0; i < petrolList.size(); ++i) {
+                float km = std::get<0>(petrolList[i]);
+                float fc = std::get<1>(petrolList[i]);
+                float p = std::get<2>(petrolList[i]);
+
+                cout << i + 1 << ". Distance: " << km << "km" << "\nFuel Capacity: " << fc << "l" << "\nPrice per L:" << p << "$" << endl << endl;
+            }
+            
+
+            cout << "Which gas station would you like to drive to?" << endl;
+            cout << "Your Input: ";
+            cin >> StringInput;
+
+
+            break;
+        }
+        case 10: {
             CDS.StopBackgroundThread();
             exit(0);
         }
-        case 10: {
+        case 11: {
             cout << "Current Version: " << VERSION_STRING << endl;
             break;
         }
-        case 11: {
+        case 12: {
             CDS.ApplyAdmin();
             break;
         }
 
-        case 12: {
+        case 13: {
             if (CDS.getAdminMode()) {
                 system("cls");
                 cout << endl << endl;

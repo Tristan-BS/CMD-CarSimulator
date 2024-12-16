@@ -1,9 +1,8 @@
 ﻿  Car-Simulator.cpp
   Car.cpp
-  RandomEvent.cpp
-  Code wird generiert.
-  5 of 414 functions ( 1.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Codegenerierung ist abgeschlossen.
-  Car-Simulator.vcxproj -> C:\APC\Eigene Programme\C++\Car-Simulator\x64\Release\Car-Simulator.exe
+C:\APC\Eigene Programme\C++\Car-Simulator\Car-Simulator\Car.cpp(239,78): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+C:\APC\Eigene Programme\C++\Car-Simulator\Car-Simulator\Car.cpp(240,78): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+C:\APC\Eigene Programme\C++\Car-Simulator\Car-Simulator\Car.cpp(241,76): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  GeneralFunctions.cpp
+Car.obj : error LNK2005: "class GeneralFunctions GF" (?GF@@3VGeneralFunctions@@A) ist bereits in Car-Simulator.obj definiert.
+C:\APC\Eigene Programme\C++\Car-Simulator\x64\Release\Car-Simulator.exe : fatal error LNK1169: Mindestens ein mehrfach definiertes Symbol gefunden.
