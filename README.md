@@ -8,10 +8,10 @@
   - Buy better Car Parts
 
 - Petrol Station
-  - Buy Fuel and Oil with Money - IN WORK
+  - Buy Fuel and Oil with Money -> IN WORK
   - In Menu get the Choice to wich Petrol Station ( different km quantity ) -> DONE
 
-- Get Money while driving
+- Get Money while driving -> IN WORK
 
 - Destinations ( Start and endpoint )
    - Get extra money for reching destination
